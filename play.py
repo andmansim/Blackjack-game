@@ -21,13 +21,19 @@ from random import shuffle
 #choice(deck)
 shuffle(deck)
 print(deck)
+
+
 #print("Choose one number from 0 to 13:")
 #player = int(input())
 #position = deck[player:player + 2]
 
-def game ():
-    print("Choose one number from 0 to 13:")
-    player = int(input())
-    position = deck[player:player + 2]
-    return position
-print(game())
+
+print("Choose one number from 0 to 13:")
+player = int(input())
+position = deck[player:player + 2]
+
+
+i = 0
+for a in cards.items():
+    if i == position:
+        print ("{0} {1}".format(cards))
