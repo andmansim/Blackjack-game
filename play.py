@@ -22,20 +22,15 @@ from random import shuffle
 shuffle(deck)
 print(deck)
 
-
-#print("Choose one number from 0 to 13:")
-#player = int(input())
-#position = deck[player:player + 2]
-
 print("Choose one number from 0 to 13:")
 player = int(input())
-position = deck[player:player + 2]
+position = deck[player]
+position2 = deck[player + 1]
 print(position)
+print(position2)
 
-i = 0
-for a, b in cards.items():
-    if i == player:
-        print (a)
-    else:
-        i = i + 1
-        
+
+value1 = cards[position]
+value2 = cards[position2]
+print (value1)
+print (value2)
