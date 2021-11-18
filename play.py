@@ -11,3 +11,13 @@
 # winning the game: if the player wins, it's bet will return and you recieve the equal number of chips from the Dealer
 # If you win with a Blackjack = 21 points, your bet will return and you recieve 3 chips for every 2 chips that you bet
 # cards: 2 decks of 52 each one. The cards are from 2 to 10 with their equal value, Q = J = K =10, and As = 1/11
+# valor de las cartas
+print("Values cards are:") 
+cards = {chr(0x1f0a1): 11, chr(0x1f0a2): 2, chr(0x1f0a3): 3, chr(0x1f0a4): 4, chr(0x1f0a5): 5, chr(0x1f0a6): 6, chr(0x1f0a7): 7, chr(0x1f0a8): 8, chr(0x1f0a9): 9, chr(0x1f0aa): 10, chr(0x1f0ab): 10, chr(0x1f0ad): 10, chr(0x1f0ae): 10 }
+print (cards)
+# cartas
+deck = [chr(x) for x in range (0x1f0a1, 0x1f0ae)]
+from random import sample
+#choice(deck)
+#shuffle(deck)
+print(deck)
