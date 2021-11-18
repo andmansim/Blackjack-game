@@ -27,13 +27,15 @@ print(deck)
 #player = int(input())
 #position = deck[player:player + 2]
 
-
 print("Choose one number from 0 to 13:")
 player = int(input())
 position = deck[player:player + 2]
-
+print(position)
 
 i = 0
-for a in cards.items():
-    if i == position:
-        print ("{0} {1}".format(cards))
+for a, b in cards.items():
+    if i == player:
+        print (a)
+    else:
+        i = i + 1
+        
