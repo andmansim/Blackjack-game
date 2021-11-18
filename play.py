@@ -17,7 +17,11 @@ cards = {chr(0x1f0a1): 11, chr(0x1f0a2): 2, chr(0x1f0a3): 3, chr(0x1f0a4): 4, ch
 print (cards)
 # cartas
 deck = [chr(x) for x in range (0x1f0a1, 0x1f0ae)]
-from random import sample
+from random import shuffle
 #choice(deck)
-#shuffle(deck)
+shuffle(deck)
 print(deck)
+print("Choose one number from 0 to 13:")
+player = int(input())
+position = deck[player:player + 2]
+print(position)
