@@ -21,7 +21,13 @@ from random import shuffle
 #choice(deck)
 shuffle(deck)
 print(deck)
-print("Choose one number from 0 to 13:")
-player = int(input())
-position = deck[player:player + 2]
-print(position)
+#print("Choose one number from 0 to 13:")
+#player = int(input())
+#position = deck[player:player + 2]
+
+def game ():
+    print("Choose one number from 0 to 13:")
+    player = int(input())
+    position = deck[player:player + 2]
+    return position
+print(game())
