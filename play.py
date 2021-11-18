@@ -34,3 +34,23 @@ value1 = cards[position]
 value2 = cards[position2]
 print (value1)
 print (value2)
+
+deck += [deck.pop(player)]
+deck.pop()
+deck += [deck.pop(player)]
+deck.pop()
+print (deck)
+
+dealer1 = deck[0]
+dealer2 = deck[1]
+print(dealer1, dealer2)
+value3 = cards[dealer1]
+value4 = cards[dealer2]
+print (value3)
+print (value4)
+print ("Cards player value:")
+total_player = value1 + value2
+print(total_player)
+print("Cards dealer value:")
+total_dealer = value3 + value4
+print(total_dealer)
