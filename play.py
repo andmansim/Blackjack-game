@@ -12,45 +12,38 @@
 # If you win with a Blackjack = 21 points, your bet will return and you recieve 3 chips for every 2 chips that you bet
 # cards: 2 decks of 52 each one. The cards are from 2 to 10 with their equal value, Q = J = K =10, and As = 1/11
 # valor de las cartas
+
+
 print("Values cards are:") 
 cards = {chr(0x1f0a1): 11, chr(0x1f0a2): 2, chr(0x1f0a3): 3, chr(0x1f0a4): 4, chr(0x1f0a5): 5, chr(0x1f0a6): 6, chr(0x1f0a7): 7, chr(0x1f0a8): 8, chr(0x1f0a9): 9, chr(0x1f0aa): 10, chr(0x1f0ab): 10, chr(0x1f0ad): 10, chr(0x1f0ae): 10 }
 print (cards)
-# cartas
-deck = [chr(x) for x in range (0x1f0a1, 0x1f0ae)]
-from random import shuffle
-#choice(deck)
-shuffle(deck)
-print(deck)
-#The player recieve two cards
-player1 = deck[0]
-player2 = deck[1]
-print(player1, player2)
+
+deck = [chr(x) for x in range (0x1f0a1, 0x1f0ae)]  
+
+def mix_cards ():
+    from random import shuffle
+    shuffle(deck)
+    print(deck)
+  
+   
+def distribute_cards (deck1):
+    card1 = deck1[0]
+    print(card1)
+    value1 = cards[card1]
+    print (value1)
+    deck1 += [deck1.pop(0)]
+    deck1.pop()
+    print (deck1)
+    return value1
 
 
-value1 = cards[player1]
-value2 = cards[player2]
-print (value1)
-print (value2)
+mix_cards()
+total_player = distribute_cards(deck) + distribute_cards(deck)
+total_dealer = distribute_cards(deck) + distribute_cards(deck)
 
-deck += [deck.pop(0)]
-deck.pop()
-deck += [deck.pop(1)]
-deck.pop()
-print (deck)
+print ("Cards player value: " , total_player)
+print ("Cards dealer value: " , total_dealer)
 
-dealer1 = deck[0]
-dealer2 = deck[1]
-print(dealer1, dealer2)
-value3 = cards[dealer1]
-value4 = cards[dealer2]
-print (value3)
-print (value4)
-print ("Cards player value:")
-total_player = value1 + value2
-print(total_player)
-print("Cards dealer value:")
-total_dealer = value3 + value4
-print(total_dealer)
 if total_player < total_dealer:
     print("Dealer wins!")
 elif total_player > total_dealer:
