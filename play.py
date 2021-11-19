@@ -21,23 +21,20 @@ from random import shuffle
 #choice(deck)
 shuffle(deck)
 print(deck)
-
-print("Choose one number from 0 to 13:")
-player = int(input())
-position = deck[player]
-position2 = deck[player + 1]
-print(position)
-print(position2)
+#The player recieve two cards
+player1 = deck[0]
+player2 = deck[1]
+print(player1, player2)
 
 
-value1 = cards[position]
-value2 = cards[position2]
+value1 = cards[player1]
+value2 = cards[player2]
 print (value1)
 print (value2)
 
-deck += [deck.pop(player)]
+deck += [deck.pop(0)]
 deck.pop()
-deck += [deck.pop(player)]
+deck += [deck.pop(1)]
 deck.pop()
 print (deck)
 
@@ -54,3 +51,10 @@ print(total_player)
 print("Cards dealer value:")
 total_dealer = value3 + value4
 print(total_dealer)
+if total_player < total_dealer:
+    print("Dealer wins!")
+elif total_player > total_dealer:
+    print("You win!")
+else:
+    print("You tie with the Dealer")
+    
